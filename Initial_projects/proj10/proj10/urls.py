@@ -21,6 +21,5 @@ from calcapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index),
-    # path('calc/',calc),
     path('result/',calc),
 ]

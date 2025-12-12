@@ -17,10 +17,11 @@ def calc(request):
         case "div":
             num3=num1/num2            
 
-    # output=f'Result of {num1} and {num2} is {num3}'        
+    output=f'Result of {num1} and {num2} is {num3}'        
 
-    return render(request,"result.html",context={'num1':num1,'num2':num2,'num3':num3})
-    # resp=HttpResponse(output)
+    # return render(request,"result.html",context={'num1':num1,'num2':num2,'num3':num3})
+    resp=HttpResponse(output)
+    return resp
     
 
 def index(request):
