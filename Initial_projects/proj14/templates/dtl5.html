@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Student Name</th>
+            <th>Subject1</th>
+            <th>subject2 </th>
+            <th>Subject3</th>
+        </tr>
+       
+          {% for name,subj in marks.items%}
+     <tr>
+<td> {{name}}</td>
+{% for s in subj%}
+<td> {{s}}</td>
+{%endfor %}
+    
+        </tr>
+        {%endfor%}
+    </table>
+    
+    <h1>Marks of suresh subject 1:{{marks.suresh.0}}</h1>
+</body>
+
+</html>
