@@ -9,3 +9,16 @@ def view2(request):
 
 def view3(request):
     return render(request,"child3.html",context={})
+
+def home(request):
+    return render(request,"home.html",context={})
+
+def course(request):
+    return render(request,"course.html",context={})
+
+def contacts(request):
+    return render(request,"contacts.html",context={})
+
+
+def calc(request):
+    return render(request,"calc.html")

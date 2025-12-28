@@ -22,4 +22,9 @@ urlpatterns = [
     path('',view1),
     path('child2/',view2),
     path('child3/',view3),
+    path('home/',home),
+    path('course/',course),
+    path('contacts/',contacts),
+    path('calc/',calc),
+
 ]
