@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Employee Details</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>Emp.no</th>
+            <th>Emp Name</th>
+            <th>Emp Job</th>
+            <th>Emp Salary</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {%for vals in emp%}
+          <tr>
+            <td>{{vals.empno}}</td>
+            <td>{{vals.empname}}</td>
+            <td>{{vals.empjob}}</td>
+            <td>{{vals.empsal}}</td>
+            <td><a href="/editemp/{{vals.empno}}">Edit</a></td>
+            <td><a href="/delemp/{{vals.empno}}">Delete</a></td>
+          </tr>
+          {%endfor%}
+    </table>
+</body>
+</html>

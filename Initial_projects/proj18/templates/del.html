@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Delete Employee</h1>
+    <form action="" method="POST">
+        {%csrf_token%}
+        <h2>Delete {{form.empno}} details</h2>
+        <input type="submit" value="delete">
+        <a href="/listemp">Cancel</a>
+    </form>
+</body>
+</html>
