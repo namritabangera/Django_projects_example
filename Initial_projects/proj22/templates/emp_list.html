@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>View Employee List</h1>
+    <table border="1" width="100%">
+        <tr>
+            <th>EmpNo</th>
+            <th>Emp Name</th>
+            <th>Job</th>
+            <th>Salary</th>
+        </tr>
+        {%for vals in emp%}
+        <tr><td>{{vals.empno}}</td><td>{{vals.empname}}</td><td>{{vals.job}}</td><td>{{vals.salary}}</td></tr>
+        {%endfor%}
+    </table>
+</body>
+</html>
