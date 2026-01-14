@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+<a href="{% url 'createemp'%}">Add Employee</a>
     <h1>View Employee List</h1>
     <table border="1" width="100%">
         <tr>
@@ -13,9 +14,13 @@
             <th>Emp Name</th>
             <th>Job</th>
             <th>Salary</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         {%for vals in emp%}
-        <tr><td>{{vals.empno}}</td><td>{{vals.empname}}</td><td>{{vals.job}}</td><td>{{vals.salary}}</td></tr>
+        <tr><td><a href="{%url 'viewdetails' vals.empno %}">{{vals.empno}}</a></td><td>{{vals.empname}}</td><td>{{vals.job}}</td><td>{{vals.salary}}</td>
+        <td><a href="{%url 'editemp' vals.empno %}">Edit</a></td>
+    <td><a href="{%url 'delemp' vals.empno %}">Delete</a></td></tr>
         {%endfor%}
     </table>
 </body>

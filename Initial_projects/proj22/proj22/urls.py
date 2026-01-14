@@ -20,5 +20,16 @@ from app1.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('view/',EmpListView.as_view())
+    path('view/',EmpListView.as_view(),name="listemp"),
+    path('create/',EmpCreateView.as_view(),name="createemp"),
+    path('edit/<pk>/',EmpUpdateView.as_view(),name="editemp"),
+    path('delete/<pk>/',EmpDelView.as_view(),name="delemp"),
+    path('viewdetails/<pk>/',EmpDetails.as_view(),name="viewdetails"),
+    path('viewhr/',EmpListView1.as_view(),name="listhremp"),
+    path('jobs/<job>/',EmpListView2.as_view()),
+    path('view3/',EmpListView3.as_view(),name="listemp3"),
+    path('showjob/',joblist),
+    path('detailsemp/<pk>/',EmpDetailsView1.as_view(),name="detailemp1"),
+
+
 ]
