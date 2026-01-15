@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from app1.models import EmpModel
 from app1.forms import Empform
-from django.views.generic import ListView,CreateView,UpdateView,DeleteView,DetailView,ListView
+from django.views.generic import ListView,CreateView,UpdateView,DeleteView,DetailView,ListView,TemplateView
 from django.urls import reverse_lazy,reverse
 from django.http import Http404,HttpResponse
 # Create your views here.
@@ -108,3 +108,19 @@ class EmpDetailsView4(EmpDetailsMixin,DetailView):
             return res 
           except:
             return HttpResponse("InvalidEmployee Number")
+
+
+class TestTempView(TemplateView):
+    template_name="test.html"
+
+
+
+class TemplateMixin:    
+    msg="Naresh i Technologies"
+    def get_context_data(self,**kwargs):
+        return super().get_context_data(msg=self.msg)
+    
+class TestTempView1(TemplateMixin,TemplateView):
+    template_name="test.html"
+    #if this below msg is not given, it will take templateMixin class msg ie "naresh i technologies"
+    msg="Python.org"
