@@ -30,6 +30,6 @@ urlpatterns = [
     path('view3/',EmpListView3.as_view(),name="listemp3"),
     path('showjob/',joblist),
     path('detailsemp/<pk>/',EmpDetailsView1.as_view(),name="detailemp1"),
-
+    path('viewmixin/<pk>/',EmpDetailsView4.as_view())
 
 ]

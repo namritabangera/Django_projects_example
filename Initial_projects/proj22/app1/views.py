@@ -89,3 +89,22 @@ class EmpDetailsView1(DetailView):
         except:
             raise Http404("Invalid Employee No")    
         
+class EmpDetailsMixin:
+     def get_object(self):
+        eno=self.kwargs.get('pk')
+        try:
+            obj=self.model.objects.get(empno=eno)
+            return obj 
+        except:
+            raise Http404("Invalid EmpNo")
+        
+class EmpDetailsView4(EmpDetailsMixin,DetailView):
+    model=EmpModel
+    template_name="emp_details.html"
+    context_object_name="emp"
+    def get(self,request,*vargs,**kwargs):
+          try:
+            res=super().get(request,vargs,kwargs)
+            return res 
+          except:
+            return HttpResponse("InvalidEmployee Number")
