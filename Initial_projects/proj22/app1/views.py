@@ -73,13 +73,14 @@ class EmpDetailsView1(DetailView):
     model=EmpModel
     template_name="emp_details.html" 
     context_object_name="emp"
+    #calling the super class func get 
     def get(self,request,*vargs,**kwargs):
         try:
             res=super().get(request,vargs,kwargs)
             return res 
         except:
             return HttpResponse("InvalidEmployeeNo")
-
+    #over riding the get_object method
     def get_object(self):
         eno=self.kwargs.get('pk')
         try:
